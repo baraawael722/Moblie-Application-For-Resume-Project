@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Main colors matching the design - Enhanced Version
-  static const Color primaryBg = Color(0xFF0D3D35); // Lighter vibrant teal
-  static const Color secondaryBg = Color(0xFF0A2E27); // Medium teal
-  static const Color cardBg = Color(0xFF153D35); // Lighter card background
-  static const Color accentGreen = Color(0xFF00FF88); // Bright neon green
-  static const Color shimmerGreen = Color(0xFF4DFFB8); // Shimmering mint green
-  static const Color glowGreen = Color(0xFF7AFFCC); // Light glow green
+  // Main colors matching the design - Blue Version
+  static const Color primaryBg = Color(0xFF0D2A3D); // Darker blue
+  static const Color secondaryBg = Color(0xFF0A1E2E); // Medium blue
+  static const Color cardBg = Color(0xFF153545); // Lighter blue background
+  static const Color accentGreen = Color(0xFF00A8FF); // Bright blue
+  static const Color shimmerGreen = Color(0xFF4DB8FF); // Shimmering light blue
+  static const Color glowGreen = Color(0xFF7ACCFF); // Light glow blue
   static const Color textPrimary = Color(0xFFFFFFFF); // White
   static const Color textSecondary = Color(0xFFB0B0B0); // Gray
 

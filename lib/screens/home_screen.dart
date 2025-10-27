@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import '../theme/app_theme.dart';
 import 'companies_page.dart';
 import 'upload_cv_page.dart';
@@ -47,52 +48,66 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         child: IconButton(
-          icon: const Icon(Icons.add, color: Colors.black, size: 28),
+          icon: const Icon(Icons.upload_file, color: Colors.black, size: 28),
           onPressed: () {
             // Action for FAB
           },
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: AppTheme.secondaryBg,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.3),
-              blurRadius: 10,
-              offset: const Offset(0, -2),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppTheme.secondaryBg.withOpacity(0.8),
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                blurRadius: 15,
+                spreadRadius: 1,
+              ),
+            ],
+            border: Border.all(
+              color: Colors.white.withOpacity(0.1),
+              width: 1,
             ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          currentIndex: _index,
-          onTap: (i) => setState(() => _index = i),
-          backgroundColor: Colors.transparent,
-          selectedItemColor: AppTheme.accentGreen,
-          unselectedItemColor: AppTheme.textSecondary,
-          type: BottomNavigationBarType.fixed,
-          elevation: 0,
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded),
-              label: 'Home',
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: BottomNavigationBar(
+                currentIndex: _index,
+                onTap: (i) => setState(() => _index = i),
+                backgroundColor: Colors.transparent,
+                selectedItemColor: AppTheme.accentGreen,
+                unselectedItemColor: AppTheme.textSecondary,
+                type: BottomNavigationBarType.fixed,
+                elevation: 0,
+                selectedFontSize: 12,
+                unselectedFontSize: 12,
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home_rounded),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.search_rounded),
+                    label: 'Search',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.notifications_rounded),
+                    label: 'Notifications',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.person_rounded),
+                    label: 'Profile',
+                  ),
+                ],
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search_rounded),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_rounded),
-              label: 'Notifications',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_rounded),
-              label: 'Profile',
-            ),
-          ],
+          ),
         ),
       ),
     );
