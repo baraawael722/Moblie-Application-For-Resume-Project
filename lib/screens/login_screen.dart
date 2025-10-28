@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen>
 
   void _login() {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomeScreen(isHR: false)),
+      MaterialPageRoute(builder: (_) => HomeScreen(isHR: _isHR)),
     );
   }
 
@@ -199,6 +199,58 @@ class _LoginScreenState extends State<LoginScreen>
                     textAlign: TextAlign.center,
                   ),
                   const Spacer(flex: 2),
+                  // Role selector: choose between User and HR
+                  Row(
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () => setState(() => _isHR = false),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            margin: const EdgeInsets.only(right: 8),
+                            decoration: BoxDecoration(
+                              color: _isHR ? Colors.transparent : AppTheme.accentGreen,
+                              border: Border.all(color: AppTheme.accentGreen),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              'User',
+                              style: TextStyle(
+                                color: _isHR ? Colors.white : Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () => setState(() => _isHR = true),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            margin: const EdgeInsets.only(left: 8),
+                            decoration: BoxDecoration(
+                              color: _isHR ? AppTheme.accentGreen : Colors.transparent,
+                              border: Border.all(color: AppTheme.accentGreen),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              'HR',
+                              style: TextStyle(
+                                color: _isHR ? Colors.black : Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
                   // Login and Sign up buttons
                   Row(
                     children: [
