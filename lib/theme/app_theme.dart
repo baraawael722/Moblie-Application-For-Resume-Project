@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   // Main colors matching the design - Blue Version
-  static const Color primaryBg = Color(0xFF0D2A3D); // Darker blue
-  static const Color secondaryBg = Color(0xFF0A1E2E); // Medium blue
-  static const Color cardBg = Color(0xFF153545); // Lighter blue background
+  static const Color primaryBg = Color(0xFF071825); // Darker blue
+  static const Color secondaryBg = Color(0xFF051218); // Medium blue
+  static const Color cardBg = Color(0xFF0D2535); // Lighter blue background
   static const Color accentGreen = Color(0xFF00A8FF); // Bright blue
-  static const Color shimmerGreen = Color(0xFF4DB8FF); // Shimmering light blue
-  static const Color glowGreen = Color(0xFF7ACCFF); // Light glow blue
+  static const Color shimmerGreen = Color(0xFF1A4A66); // Shimmering light blue
+  static const Color glowGreen = Color(0xFF2A5A77); // Light glow blue
   static const Color textPrimary = Color(0xFFFFFFFF); // White
   static const Color textSecondary = Color(0xFFB0B0B0); // Gray
 
@@ -83,7 +83,7 @@ class AppTheme {
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: secondaryBg,
+      backgroundColor: Colors.transparent,
       selectedItemColor: accentGreen,
       unselectedItemColor: textSecondary,
       type: BottomNavigationBarType.fixed,
